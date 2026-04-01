@@ -1,3 +1,9 @@
+const { createInterface } = require('readline');
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 console.log("Hello world");
 
 const { add, subtract, divide, multiply } = require("./math.js");
@@ -27,4 +33,9 @@ console.log("The distance the car will travel in 15 hours is", Distance(15), "mi
 console.log("---------------------------------------------------------")
 
 const { Convert } = require ("./Exercise-3.js")
-console.log("10 F =", Convert(10), "C")
+rl.question('Masukkan Farenhait = ', (c) => {
+console.log(`${c} F =`, Convert(c), "C")
+rl.close()
+console.log("---------------------------------------------------------")
+}
+)
