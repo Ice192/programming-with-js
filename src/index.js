@@ -1,4 +1,5 @@
-const { createInterface } = require('readline');
+const readline = require('readline');
+const { createInterface } = readline;
 const rl = createInterface({
   input: process.stdin,
   output: process.stdout
@@ -32,10 +33,32 @@ console.log("The distance the car will travel in 10 hours is", Distance(10), "mi
 console.log("The distance the car will travel in 15 hours is", Distance(15), "miles")
 console.log("---------------------------------------------------------")
 
+const {Money} = require ("./Exercise-4.js")
+
+rl.question('Enter initial amount = ', (p) => {
+  //follow-up question
+  rl.question('Enter annual interest rate = ', (r) => {
+  //follow-up question
+  rl.question('Monthly or Yearly = ', (n) => {
+  //follow-up question
+  rl.question('Enter time (yearly) = ', (t) => {
+    // execution
+    console.log(" Your Money ",Money(p, r, n, t))
+    // Close when done
+    rl.close();
+     });
+    });
+  });
+});
+
+
 const { Convert } = require ("./Exercise-3.js")
-rl.question('Masukkan Farenhait = ', (c) => {
+rl.question('Input Farenhait = ', (c) => {
 console.log(`${c} F =`, Convert(c), "C")
-rl.close()
 console.log("---------------------------------------------------------")
+rl.close()
 }
 )
+
+
+
