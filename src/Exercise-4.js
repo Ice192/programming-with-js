@@ -19,8 +19,6 @@ function Money (Principal, rate, n, t) {
     
 }
 
-console.log(Money(1000000, 2, "Monthly", 2))
-
 module.exports = {
     Money
 }
