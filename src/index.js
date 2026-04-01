@@ -33,7 +33,17 @@ console.log("The distance the car will travel in 10 hours is", Distance(10), "mi
 console.log("The distance the car will travel in 15 hours is", Distance(15), "miles")
 console.log("---------------------------------------------------------")
 
+const { Convert } = require ("./Exercise-3.js")
 const {Money} = require ("./Exercise-4.js")
+const { Days } = require ("./Exercise-5.js")
+
+rl.question('Input Farenhait = ', (c) => {
+console.log(`${c} F =`, Convert(c), "C")
+console.log("---------------------------------------------------------")
+
+rl.question('Input Number 1 0f 7 = ', (index) => {
+Days(index)
+console.log("---------------------------------------------------------")
 
 rl.question('Enter initial amount = ', (p) => {
   //follow-up question
@@ -50,15 +60,15 @@ rl.question('Enter initial amount = ', (p) => {
     });
   });
 });
-
-
-const { Convert } = require ("./Exercise-3.js")
-rl.question('Input Farenhait = ', (c) => {
-console.log(`${c} F =`, Convert(c), "C")
-console.log("---------------------------------------------------------")
-rl.close()
 }
 )
+}
+)
+
+
+
+
+
 
 
 
