@@ -31,6 +31,7 @@ console.log("---------------------------------------------------------");
 
 //Exercise 2
 const {Distance} = require ("./Exercise-2.js");
+
 console.log("The distance the car will travel in 6 hours is", Distance(6), "miles");
 console.log("The distance the car will travel in 10 hours is", Distance(10), "miles");
 console.log("The distance the car will travel in 15 hours is", Distance(15), "miles");
@@ -72,7 +73,7 @@ const { Charges } = require ("./Exercise-7.js")
 console.log("Total charges ",Charges(5), "$")
 console.log("---------------------------------------------------------") 
 
-// Exercise 8
+// // Exercise 8
 const { Restourant } = require("./Exercise-8.js")
 
 const vegetarian = readline.question("Is Anyone in your party a vegetarian? (yes/no) = ")
@@ -83,6 +84,17 @@ console.log("Here are your restorant choices:")
 console.log(Restourant(vegetarian, vegan, gluten))
 console.log("---------------------------------------------------------") 
 
+// Algorithm-workbench. Nomor 1
+const {firstLoop, secondLoop} = require ("./Algorithm-workbench.js");
+let angka = readline.question("Masukkan Nomor: ");
+
+firstLoop(angka);
+console.log("---------------------------------------------------------");
+
+// Algorithm-workbench. Nomor 2
+const isAgree = readline.question("Ayo Mulai (yes)");
+secondLoop(isAgree);
+console.log("---------------------------------------------------------");
 
 
 
