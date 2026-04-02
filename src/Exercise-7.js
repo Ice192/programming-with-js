@@ -1,18 +1,16 @@
-function Charges (charge) {
-    if (charge <= 2) {
-        return charge * 1.50
-    } else if (charge <= 6) {
-        return charge * 3
-    } else if (charge <= 10) {
-        return charge * 4
-    } else if (charge > 10) {
-        return charge * 4.75
+function Charges (pound) {
+    if (pound <= 2) {
+        return pound * 1.5
+    } else if ( pound <= 6){
+        return pound * 3
+    } else if ( pound <= 10){
+        return pound * 4
+    } else if (pound > 10) {
+        return pound * 4.75
     } else {
         console.log("Invalid Input")
     }
 }
-
-console.log (Charges("A"))
 
 module.exports = {
     Charges
