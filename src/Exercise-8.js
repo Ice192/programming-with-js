@@ -11,7 +11,7 @@ function Restourant (vegetarian, vegan, gluten) {
     } else (
         console.log("None")
     )
-}
+} //Seperti permainan Akinator yang menebak isi pikiran
 
 
 module.exports = {

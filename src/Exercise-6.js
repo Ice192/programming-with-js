@@ -67,10 +67,6 @@ function Roulette (num){
     // return
 }
 
-for(let i = 0; i <= 36; i++ ) {
-  Roulette(i)
-}
-
 module.exports = {
     Roulette
 }

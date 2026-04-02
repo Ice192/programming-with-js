@@ -26,8 +26,6 @@ function Days (index) {
 }
 }
 
-Days("3")
-
 module.exports = {
     Days
 }
