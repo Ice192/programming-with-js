@@ -1,5 +1,3 @@
-
-
 function Money (Principal, rate, n, t) {
     rate = rate/100
 
@@ -9,15 +7,16 @@ function Money (Principal, rate, n, t) {
         n = 4
     }
 
-    let x = 1 + rate/n
-    y = n * t
-    // const maxPow = 
+    const x = 1 + rate/n
+    const y = n * t
 
     let Amount = Principal * (x ** y)
 
     return Amount
     
 }
+
+console.log(Money(1000000, 2, "Monthly", 4))
 
 module.exports = {
     Money

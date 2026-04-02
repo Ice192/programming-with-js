@@ -26,7 +26,7 @@ function Days (index) {
 }
 }
 
-// Days(1)
+Days("3")
 
 module.exports = {
     Days

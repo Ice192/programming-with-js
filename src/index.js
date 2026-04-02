@@ -65,7 +65,11 @@ rl.question('Enter initial amount = ', (p) => {
 }
 )
 
+// const { Roulette } = require ("./Exercise-6.js")
 
+// for(let i = 0; i < 30; i++ ) {
+//   Roulette(i)
+// }
 
 
 
