@@ -20,7 +20,25 @@ while(isAgree == "yes") {
     console.log("Thank You");
 }
 
+function thirdLoop () {
+    for (let num = 0; num <= 1000;){
+        console.log(num);
+        num += 10;
+    }
+}
+
+function fourthLoop () {
+    let result = []
+    for (let i = 1; i <= 10; i++){
+        let num = readline.question("Masukkan Angka: ")
+        result.push(num)
+    }
+    console.log(result)
+}
+
 module.exports = {
     firstLoop,
-    secondLoop
+    secondLoop,
+    thirdLoop,
+    fourthLoop
 }
