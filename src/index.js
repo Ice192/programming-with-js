@@ -85,7 +85,7 @@ console.log(Restourant(vegetarian, vegan, gluten))
 console.log("---------------------------------------------------------") 
 
 // Algorithm-workbench. Nomor 1
-const {firstLoop, secondLoop, thirdLoop, fourthLoop, fifthLoop, sixth, seventhLoop} = require ("./Algorithm-workbench.js");
+const {firstLoop, secondLoop, thirdLoop, fourthLoop, fifthLoop, sixth, seventhLoop, validationPrompt, secondValidation} = require ("./Algorithm-workbench.js");
 let angka = readline.question("Masukkan Nomor: ");
 
 firstLoop(angka);
@@ -111,6 +111,12 @@ console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 7
     seventhLoop()
+
+// Algorithm-workbench. Nomor 8
+    validationPrompt()
+
+// Algorithm-workbench. Nomor 9
+    secondValidation()
 
 
 

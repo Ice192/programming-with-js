@@ -71,6 +71,27 @@ function seventhLoop(){
 }
 }
 
+function validationPrompt () {
+    let valid = readline.question("Masukkan Angka ")
+
+    if (valid != NaN || valid == -0) {
+        console.log(`this ${valid} is valid input`)
+    } else {
+        console.log(`Invalid Input`)
+    }
+} // Belum mendapatkan jawaban bagaimana kalau user menekan string (yang harusnya invalid tapi malah valid)
+
+function secondValidation () {
+    let valid = readline.question("Masukkan Angka ") 
+
+    if (valid >= 1 && valid <= 10) {
+        console.log(`this ${valid} is valid input`)
+    } else {
+        console.log("Invalid Input")
+    }
+}
+
+secondValidation()
 
 module.exports = {
     firstLoop,
@@ -79,5 +100,7 @@ module.exports = {
     fourthLoop,
     fifthLoop,
     sixth,
-    seventhLoop
+    seventhLoop,
+    validationPrompt,
+    secondValidation
 }
