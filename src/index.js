@@ -86,6 +86,7 @@ console.log("---------------------------------------------------------")
 
 // Algorithm-workbench. Nomor 1
 const {firstLoop, secondLoop, thirdLoop, fourthLoop, fifthLoop, sixth, seventhLoop, validationPrompt, secondValidation} = require ("./Algorithm-workbench.js");
+const { bugCollector } = require("./bug-collector.js");
 let angka = readline.question("Masukkan Nomor: ");
 
 firstLoop(angka);
@@ -119,6 +120,7 @@ console.log("---------------------------------------------------------");
     secondValidation()
 
 
-
+// Bug Collector
+  bugCollector()
 
 

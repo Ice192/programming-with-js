@@ -16,4 +16,6 @@ function bugCollector () {
     console.log(`Total bugs in 5 days is ${total}`)
 }
 
-bugCollector()
+module.exports = {
+    bugCollector
+}
