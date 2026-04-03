@@ -12,7 +12,7 @@ function secondLoop (isAgree) {
 while(isAgree == "yes") {
   let num1 = readline.question("Masukkan Angka pertama: ");
   let num2 = readline.question("Masukkan Angka kedua: ");
-  const sum = num1 + num2;
+  const sum = Number(num1) + Number(num2);
   console.log(`${num1} + ${num2} = ${sum}`);
 
   isAgree = readline.question("Apakah mau lanjut? (yes) ")
@@ -90,8 +90,6 @@ function secondValidation () {
         console.log("Invalid Input")
     }
 }
-
-secondValidation()
 
 module.exports = {
     firstLoop,

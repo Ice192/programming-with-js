@@ -102,25 +102,31 @@ console.log("---------------------------------------------------------");
    console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 4
-    fourthLoop()
+   fourthLoop()
+   console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 5
     fifthLoop()
+    console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 6
     sixth(10)
+    console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 7
     seventhLoop()
+    console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 8
     validationPrompt()
+    console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 9
     secondValidation()
-
+    console.log("---------------------------------------------------------");
 
 // Bug Collector
   bugCollector()
+  console.log("---------------------------------------------------------");
 
 
