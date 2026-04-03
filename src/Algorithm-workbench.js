@@ -36,9 +36,48 @@ function fourthLoop () {
     console.log(result)
 }
 
+function fifthLoop () {
+    let i, j;
+    let result = [];
+    for (i = 1; i <= 30;) {
+        for (j = 30; j > 0; j--){
+            const hasil = i/j;
+            result.push(hasil);
+            console.log(`${i}/${j}`);
+            i++;
+        }
+    }
+    let total = 0
+    result.forEach(x => {
+        total += x;
+    })
+    console.log(`Total adalah ${total}`);
+}
+
+function sixth(x) {
+    x += 1
+    x *= 2
+    x /= 10
+    x -= 100
+    console.log(`jumlah menggunakan augmented operation adalah ${x}`)
+}
+
+function seventhLoop(){
+    for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= 15; j++) {
+        process.stdout.write(`# `)
+    }
+    console.log()
+}
+}
+
+
 module.exports = {
     firstLoop,
     secondLoop,
     thirdLoop,
-    fourthLoop
+    fourthLoop,
+    fifthLoop,
+    sixth,
+    seventhLoop
 }
