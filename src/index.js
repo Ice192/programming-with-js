@@ -168,5 +168,14 @@ for (let i = 0; i <= total_convert; i++){
 }
 console.log("---------------------------------------------------------");
 
+//Pennies for Pay
+const {Pennies} = require("./pennies.js")
+
+const days = readline.question("Input number of days: ")
+const total_pay = Pennies(days)
+console.log(`Total pay in the end of period is ${total_pay} $`)
+console.log("---------------------------------------------------------");
+
+//
 
 
