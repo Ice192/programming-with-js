@@ -151,6 +151,14 @@ const time = readline.question("How many hours has it traveled? ");
 console.log("Total distance is ", distanceTravel(speed, time), " miles");
 console.log("---------------------------------------------------------");
 
+// Average Rainfall
+const {averageRainfall} = require("./average-rainfall.js")
+
+const num_year = readline.question("Number of year: ")
+const average_rainfall = averageRainfall(num_year)
+console.log(`Total month: ${average_rainfall.total_month} - Total inches: ${average_rainfall.total_inche}`)
+console.log(`So the average is ${average_rainfall.total_avg}`)
+console.log("---------------------------------------------------------");
 
 
 
