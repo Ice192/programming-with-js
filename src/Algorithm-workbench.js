@@ -2,10 +2,7 @@ const readline = require("readline-sync");
 
 function firstLoop (number) {
     let product = number * 10;
-    while (product < 100) {
-        console.log("Product ", product);
-        product++;
-    }
+    return product
 }
 
 function secondLoop (isAgree) {
@@ -85,7 +82,7 @@ function validationPrompt () {
 function secondValidation () {
     let valid = readline.question("Masukkan Angka ") 
 
-    if (valid >= 1 && valid <= 10) {
+    if (valid >= 1 && valid <= 100) {
         console.log(`this ${valid} is valid input`)
     } else {
         console.log("Invalid Input")

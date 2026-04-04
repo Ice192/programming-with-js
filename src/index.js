@@ -86,9 +86,17 @@ console.log("---------------------------------------------------------")
 
 // Algorithm-workbench. Nomor 1
 const {firstLoop, secondLoop, thirdLoop, fourthLoop, fifthLoop, sixth, seventhLoop, validationPrompt, secondValidation} = require ("./Algorithm-workbench.js");
-let angka = readline.question("Masukkan Nomor: ");
 
-firstLoop(angka);
+while (true){
+    let angka = readline.question("Masukkan Nomor: ");
+    const product = firstLoop(angka)
+    if (product <= 100) {
+    console.log("Total product ",firstLoop(angka));
+    } else {
+        break
+    }
+}
+
 console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 2
@@ -199,4 +207,10 @@ col_num.forEach(x => {
 
     console.log(`Total Numbers is ${result}`)
     console.log("---------------------------------------------------------")
+
+// Ocean Levels
+const {oceanLevel} = require("./ocean-levels.js")
+ oceanLevel(25)
+
+console.log("---------------------------------------------------------")
 
