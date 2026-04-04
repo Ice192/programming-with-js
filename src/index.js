@@ -176,6 +176,27 @@ const total_pay = Pennies(days)
 console.log(`Total pay in the end of period is ${total_pay} $`)
 console.log("---------------------------------------------------------");
 
-//
+// Sum of Numbers
+const col_num = []
+let result = 0
+for(;true;){
+    const input_num = readline.question("Input Number: ")
+    
+    //check
+    if (input_num > 0 && input_num != NaN) {
+        col_num.push(Number(input_num))
+    } else if (input_num < 0 && input_num != NaN){
+        console.log("Negative Number (Stop)")
+        break;
+    } else {
+        console.log("Undefined")
+        break;
+    }
+}
+col_num.forEach(x => {
+        result += x
+    })
 
+    console.log(`Total Numbers is ${result}`)
+    console.log("---------------------------------------------------------")
 
