@@ -51,7 +51,8 @@ function fifthLoop () {
     result.forEach(x => {
         total += x;
     })
-    console.log(`Total adalah ${total}`);
+
+    return total
 }
 
 function sixth(x) {

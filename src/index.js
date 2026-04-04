@@ -105,7 +105,7 @@ fourthLoop()
 console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 5
-fifthLoop()
+console.log(`Total adalah `, fifthLoop());
 console.log("---------------------------------------------------------");
 
 // Algorithm-workbench. Nomor 6
@@ -141,6 +141,16 @@ const { Budget } = require("./budget-analysis.js");
 const month = readline.question("Month : ")
 
 console.log("Total ", Budget(month))
+console.log("---------------------------------------------------------");
+
+// Distance Traveled
+const {distanceTravel} = require("./distance-travele.js");
+const speed = readline.question("What is the speed of vehicle in mph? ");
+const time = readline.question("How many hours has it traveled? ");
+
+console.log("Total distance is ", distanceTravel(speed, time), " miles");
+console.log("---------------------------------------------------------");
+
 
 
 
