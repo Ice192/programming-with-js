@@ -160,6 +160,13 @@ console.log(`Total month: ${average_rainfall.total_month} - Total inches: ${aver
 console.log(`So the average is ${average_rainfall.total_avg}`)
 console.log("---------------------------------------------------------");
 
+// Convert Temprature
+const total_convert = 20
+
+for (let i = 0; i <= total_convert; i++){
+    console.log(`${i} F =`, Convert(i), "C");
+}
+console.log("---------------------------------------------------------");
 
 
 
