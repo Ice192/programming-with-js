@@ -18,37 +18,44 @@ while(isAgree == "yes") {
 }
 
 function thirdLoop () {
-    for (let num = 0; num <= 1000;){
+    let num = 0
+    // while(num <= 1000){
+    //     console.log(num)
+    //     num += 10
+    // }
+
+    for (num; num <= 1000; num += 10){
         console.log(num);
-        num += 10;
     }
 }
 
 function fourthLoop () {
-    let result = []
     for (let i = 1; i <= 10; i++){
-        let num = readline.question("Masukkan Angka: ")
-        result.push(num)
+        let num = readline.question(`Masukkan Angka ke ${i}/10: `)
     }
-    console.log(result)
 }
 
 function fifthLoop () {
-    let i, j;
+    let i;
     let result = [];
+    // let loop = 1;
+    let j = 30;
     for (i = 1; i <= 30;) {
-        for (j = 30; j > 0; j--){
             const hasil = i/j;
             result.push(hasil);
             console.log(`${i}/${j}`);
             i++;
-        }
+            j--;
+        
+        // loop++
     }
+    // console.log(loop)
+    let index = 0
     let total = 0
-    result.forEach(x => {
-        total += x;
-    })
-
+    while(index < result.length) {
+        total += result[index]
+        index++
+    }
     return total
 }
 
@@ -71,8 +78,9 @@ function seventhLoop(){
 
 function validationPrompt () {
     let valid = readline.question("Masukkan Angka ")
+    const number = parseInt(valid)
 
-    if (valid != NaN || valid == -0) {
+    if (!isNaN(number)) {
         console.log(`this ${valid} is valid input`)
     } else {
         console.log(`Invalid Input`)
@@ -81,13 +89,15 @@ function validationPrompt () {
 
 function secondValidation () {
     let valid = readline.question("Masukkan Angka ") 
-
-    if (valid >= 1 && valid <= 100) {
+    const number = parseInt(valid)
+    if (number >= 1 && number <= 100) {
         console.log(`this ${valid} is valid input`)
     } else {
         console.log("Invalid Input")
     }
 }
+
+validationPrompt()
 
 module.exports = {
     firstLoop,
