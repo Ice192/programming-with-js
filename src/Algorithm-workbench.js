@@ -115,14 +115,17 @@ function bilanganPrima (num) {
 
         }
         if (isPrime) {
-            console.log(`${num} bilangan prima`)
+            // console.log(`${num} bilangan prima`)
+            return num
         } else {
-            console.log(`${num} bukan bilangan prima`)
+
+            return
         }
     }
     else {
         console.log("Input bukan bilangan prima")
     }
+    
 }
 
 // console.log(fourthLoop())
@@ -138,7 +141,18 @@ module.exports = {
     secondValidation
 }
 
-// bilanganPrima(-3)
+let bil_prima = []
+for (let angka = 1;angka <= 100000;angka++) {
+    let prime = bilanganPrima(angka)
+    //    console.log(prime)
+    
+    if(prime != undefined) {
+        bil_prima.push(angka)
+    }
+}
+let count = bil_prima.length
+console.log("Bilangan Prima tertinggi adalah ", bil_prima[count-1])
+console.log("Jumlah bilangan prima ", bil_prima.length)
 
 // let luar = 0
 // let dalam = 0
