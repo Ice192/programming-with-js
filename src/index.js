@@ -139,14 +139,14 @@ const { bugCollector } = require("./bug-collector.js");
 
 // Calories-Burned
 const {calories} = require ("./calories-burned");
-const calory = readline.question(`How much your calory today: `)
+// const calory = readline.question(`How much your calory today: `)
 
-console.log(calories(calory))
+console.log(calories())
 console.log("---------------------------------------------------------");
 
 // Budget-Analysis
 const { Budget } = require("./budget-analysis.js");
-const month = readline.question("Month : ")
+const month = readline.question("Input your budget : ")
 
 console.log("Total ", Budget(month))
 console.log("---------------------------------------------------------");

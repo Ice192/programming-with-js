@@ -1,19 +1,23 @@
 const readline = require("readline-sync");
 
-function Budget (month) {
-    let amount = []
-    for (let i = 1; i <= month; i++) {
-        let total = readline.question(`Input your Expenses ${i} month: `)
-        amount.push(Number(total))
+function Budget (budget) {
+    
+    for (let i = 1; i <= budget; i++) {
+        let total = readline.question(`Input your Expenses ${i}: `)
+        budget -= total
+
+        console.log(`Amount: ${budget}`)
     }
 
-    let Total = 0
-    amount.forEach(x => {
-            Total += x
-    })
+    // let Total = 0
+    // amount.forEach(x => {
+    //         Total += x
+    // })
 
-    return Total
+    return budget
 }
+
+Budget(1000000)
 
 module.exports = {
     Budget
