@@ -10,11 +10,17 @@ function bugCollector () {
     }
 
     let total = 0
-    result.forEach(x => {
-        total += x;
-    })
+    let index = 0
+    while(index < result.length){
+        total += result[index]
+        index++
+    }
+    // result.forEach(x => {
+    //     total += x;
+    // })
     console.log(`Total bugs in 5 days is ${total}`)
 }
+
 
 module.exports = {
     bugCollector

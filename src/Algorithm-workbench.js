@@ -97,7 +97,6 @@ function secondValidation () {
     }
 }
 
-validationPrompt()
 
 module.exports = {
     firstLoop,
