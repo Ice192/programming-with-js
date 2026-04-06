@@ -30,9 +30,13 @@ function thirdLoop () {
 }
 
 function fourthLoop () {
+    let total = 0
     for (let i = 1; i <= 10; i++){
         let num = readline.question(`Masukkan Angka ke ${i}/10: `)
+        total += Number(num)
     }
+
+    return total
 }
 
 function fifthLoop () {
@@ -85,11 +89,12 @@ function validationPrompt () {
     } else {
         console.log(`Invalid Input`)
     }
-} // Belum mendapatkan jawaban bagaimana kalau user menekan string (yang harusnya invalid tapi malah valid)
+} 
 
 function secondValidation () {
     let valid = readline.question("Masukkan Angka ") 
     const number = parseInt(valid)
+    console.log(number)
     if (number >= 1 && number <= 100) {
         console.log(`this ${valid} is valid input`)
     } else {
@@ -97,7 +102,30 @@ function secondValidation () {
     }
 }
 
+function bilanganPrima (num) {
+    let isPrime = true
+    if(num == 1){
+        console.log("1 Bukan Bilangan Prima")
+    } else if (num > 1) {
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                isPrime = false
+                break
+            }
 
+        }
+        if (isPrime) {
+            console.log(`${num} bilangan prima`)
+        } else {
+            console.log(`${num} bukan bilangan prima`)
+        }
+    }
+    else {
+        console.log("Input bukan bilangan prima")
+    }
+}
+
+// console.log(fourthLoop())
 module.exports = {
     firstLoop,
     secondLoop,
@@ -109,3 +137,22 @@ module.exports = {
     validationPrompt,
     secondValidation
 }
+
+// bilanganPrima(-3)
+
+// let luar = 0
+// let dalam = 0
+
+// for (i = 1; i <= 30; i++ ) {
+//     console.log("loop luar")
+//     luar++;
+//   for (j = 1; j <= 1000; j++) {
+//     console.log("loop dalam")
+//     dalam++;
+    
+//   }
+// }
+
+// console.log(luar);
+// console.log(dalam)
+
