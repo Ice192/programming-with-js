@@ -187,7 +187,7 @@ console.log("---------------------------------------------------------");
 // Sum of Numbers
 const col_num = []
 let result = 0
-for(;true;){
+while(true){
     const input_num = readline.question("Input Number: ")
     
     //check
@@ -212,5 +212,11 @@ col_num.forEach(x => {
 const {oceanLevel} = require("./ocean-levels.js")
  oceanLevel(25)
 
+console.log("---------------------------------------------------------")
+
+// Tuition Increase
+const {Tuition} = require ("./tuition-increase.js")
+
+Tuition(5)
 console.log("---------------------------------------------------------")
 
