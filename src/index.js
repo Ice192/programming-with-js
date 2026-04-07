@@ -220,3 +220,11 @@ const {Tuition} = require ("./tuition-increase.js")
 Tuition(5)
 console.log("---------------------------------------------------------")
 
+// Weight Loss
+const {WeightLoss} = require ("./weight-loss.js")
+const weight = readline.question("Enter your current weight: ")
+let hasil
+hasil = WeightLoss(weight)
+console.log("The final result after 6 months is ", hasil)
+console.log("---------------------------------------------------------")
+
