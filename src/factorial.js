@@ -6,7 +6,10 @@ function Factorial (num) {
     for(let n = 1; n <= num; n++) {
         hasil *= n
 
-        proses += n + (n < num ? " x ": "")
+        proses += n
+        if (n < num) {
+        proses += " x ";
+        }
     }
     console.log(proses,"=", hasil)
     return hasil
