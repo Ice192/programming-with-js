@@ -247,3 +247,10 @@ const biaya_galon = readline.question("Masukkan biaya galon ($): ")
 
 paint(wall_space, biaya_galon)
 console.log("---------------------------------------------------------")
+
+// Monthly Sales Tax
+const {salesTax} = require("./sales-tax.js")
+
+const total_sales = readline.question("Masukkan Total biaya : ")
+
+console.log(`Total tax yang dibayar = $${salesTax(total_sales)}`)
