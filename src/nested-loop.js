@@ -12,7 +12,7 @@ FirstNested()
 
 function SecondNested ()  {
     let line = ""
-    for (let i = 0 ; i < 7; i++) {
+    for (let i = 0 ; i < 6; i++) {
         line += "#"
         for (let j = 0; j < i; j++) {
             line += " "
