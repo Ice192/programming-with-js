@@ -292,3 +292,12 @@ const angka2 = readline.question("Masukkan Angka kedua : ")
 const greater = greaterThan(angka1, angka2)
 console.log(`Angka terbesar adalah ${greater}`)
 console.log("---------------------------------------------------------")
+
+// Falling Distance
+const {falling_distance} = require("./falling-distance.js")
+
+for (let time = 1; time <= 10; time++) {
+    console.log(`jarak setelah ${time} detik adalah ${falling_distance(time).toFixed(2)} meter`)
+}
+console.log("---------------------------------------------------------")
+
