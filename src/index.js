@@ -254,3 +254,12 @@ const {salesTax} = require("./sales-tax.js")
 const total_sales = readline.question("Masukkan Total biaya : ")
 
 console.log(`Total tax yang dibayar = $${salesTax(total_sales)}`)
+console.log("---------------------------------------------------------")
+
+// Feet to Inches
+const {feetToInches} = require("./feet-to-inches.js")
+
+const feet = readline.question ("Panjang (feet): ")
+
+console.log(`${feet} feet = ${feetToInches(feet)} inches`)
+console.log("---------------------------------------------------------")
