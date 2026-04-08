@@ -8,7 +8,7 @@ const readline = require("readline-sync");
 
 console.log("Hello world");
 
-const { add, subtract, divide, multiply } = require("./math.js");
+const { add, subtract, divide, multiply, greaterThan } = require("./math.js");
 
 console.log("1 + 2 =", add(1, 2));
 console.log("5 - 3 =", subtract(5, 3));
@@ -285,3 +285,10 @@ if (random_num1 > 0 && random_num2 > 0)  {
 
 console.log("---------------------------------------------------------")
 
+// Maximun of 2 values
+const angka1 = readline.question("Masukkan Angka pertama : ")
+const angka2 = readline.question("Masukkan Angka kedua : ")
+
+const greater = greaterThan(angka1, angka2)
+console.log(`Angka terbesar adalah ${greater}`)
+console.log("---------------------------------------------------------")
