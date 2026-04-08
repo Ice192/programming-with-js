@@ -239,3 +239,11 @@ const hasil_tiket = totalCost(tiket_a, tiket_b, tiket_c)
 console.log(`Total harga tiket adalah $${hasil_tiket}`)
 console.log("---------------------------------------------------------")
 
+// Paint Job Estimator
+const {paint} = require("./paint-job.js")
+
+const wall_space = readline.question("Masukkan luas dinding yang akan di cat (sqrt) : ")
+const biaya_galon = readline.question("Masukkan biaya galon ($): ")
+
+paint(wall_space, biaya_galon)
+console.log("---------------------------------------------------------")
