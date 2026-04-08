@@ -263,3 +263,25 @@ const feet = readline.question ("Panjang (feet): ")
 
 console.log(`${feet} feet = ${feetToInches(feet)} inches`)
 console.log("---------------------------------------------------------")
+
+// Math Quiz
+const random_num1 = Math.floor(Math.random() * 100) + 1
+const random_num2 = Math.floor(Math.random() * 100) + 1
+
+if (random_num1 > 0 && random_num2 > 0)  {
+    const hasil = add(random_num1, random_num2)
+    console.log(`${random_num1} + ${random_num2} = ?`)
+
+    const answer = readline.question("Jawabanmu adalah ")
+    if (answer == hasil) {
+            console.log("Congratulations. Anda Benar")
+        } else {
+            console.log("Anda Salah")
+        }
+
+} else {
+    console.log("Invalid Number")
+}
+
+console.log("---------------------------------------------------------")
+
