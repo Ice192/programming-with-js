@@ -17,7 +17,7 @@ function Budget (budget) {
     return budget
 }
 
-Budget(1000000)
+// Budget(1000000)
 
 module.exports = {
     Budget

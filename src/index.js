@@ -228,3 +228,14 @@ hasil = WeightLoss(weight)
 console.log("The final result after 6 months is ", hasil)
 console.log("---------------------------------------------------------")
 
+// Tiket Class
+const {totalCost} = require("./tiket-class.js")
+
+const tiket_a = readline.question("Jumlah Tiket class A: ")
+const tiket_b = readline.question("Jumlah Tiket class B: ")
+const tiket_c = readline.question("Jumlah Tiket class C: ")
+
+const hasil_tiket = totalCost(tiket_a, tiket_b, tiket_c)
+console.log(`Total harga tiket adalah $${hasil_tiket}`)
+console.log("---------------------------------------------------------")
+
