@@ -338,3 +338,8 @@ console.log("---------------------------------------------------------")
     const amount = futureValue(Number(present_value), Number(interest), Number(month_))
     console.log(`Total saldo setelah beberapa bulan adalah ${amount.toFixed(2)}`)
     console.log("---------------------------------------------------------")
+
+// Number Guessing Game
+const {numberGame} = require("./random-number-guess.js")
+
+console.log(numberGame())
