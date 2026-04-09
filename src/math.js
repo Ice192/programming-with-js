@@ -52,5 +52,3 @@ module.exports = {
   greaterThan,
   oddEven
 };
-
-oddEven()

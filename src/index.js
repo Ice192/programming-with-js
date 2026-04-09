@@ -327,3 +327,14 @@ console.log("---------------------------------------------------------")
     const odd_even = oddEven()
     console.log(`Jumlah Ganjil: ${odd_even.odd}`)
     console.log(`Jumlah Genap: ${odd_even.evn}`)
+console.log("---------------------------------------------------------")
+
+// Future Value
+    const {futureValue} = require("./future-value.js")
+
+    const present_value = readline.question("Masukkan saldo sekarang ($) ")
+    const interest = readline.question("Masukkan Interest berapa: (%)")
+    const month_ = readline.question("Masukkan berapa bulan: ")
+    const amount = futureValue(Number(present_value), Number(interest), Number(month_))
+    console.log(`Total saldo setelah beberapa bulan adalah ${amount.toFixed(2)}`)
+    console.log("---------------------------------------------------------")
