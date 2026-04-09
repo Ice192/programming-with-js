@@ -307,3 +307,18 @@ const velocity = readline.question("Masukkan kecepatan objek: ")
 
 console.log(`Hasil Energi Kinetiknya adalah ${kineticEnergy(mass, velocity)}`)
 console.log("---------------------------------------------------------")
+
+// Average and Grade
+const {averageTest, grade} = require("./test-average-and-grade.js")
+
+const test = []
+    for(let i = 1; i <= 5; i++) {
+        const nilai = readline.question(`Masukkan nilai ${i}: `)
+        test.push(Number(nilai))
+    }
+
+    const avg = averageTest(test)
+    const _grade = grade(avg)
+console.log(`Nilai rata-rata anda: ${avg}`)
+console.log(`Letter Grade: ${_grade}`)
+console.log("---------------------------------------------------------")
