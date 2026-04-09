@@ -27,12 +27,30 @@ function greaterThan (a, b) {
   }
 }
 
+function oddEven () {
+  let odd = 0
+  let evn = 0
+  for (let i = 0; i < 100; i++){
+    const num = Math.floor(Math.random() * 100) + 1
+    if (num % 2 === 0) {
+      console.log(`${num} bilangan genap`)
+      evn++
+    } else {
+      console.log(`${num} bilangan ganjil`)
+      odd++
+    }
 
+  }
+  return {odd, evn}
+}
 
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
-  greaterThan
+  greaterThan,
+  oddEven
 };
+
+oddEven()

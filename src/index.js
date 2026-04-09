@@ -8,7 +8,7 @@ const readline = require("readline-sync");
 
 console.log("Hello world");
 
-const { add, subtract, divide, multiply, greaterThan } = require("./math.js");
+const { add, subtract, divide, multiply, greaterThan, oddEven } = require("./math.js");
 
 console.log("1 + 2 =", add(1, 2));
 console.log("5 - 3 =", subtract(5, 3));
@@ -322,3 +322,8 @@ const test = []
 console.log(`Nilai rata-rata anda: ${avg}`)
 console.log(`Letter Grade: ${_grade}`)
 console.log("---------------------------------------------------------")
+
+// Odd Even Counter
+    const odd_even = oddEven()
+    console.log(`Jumlah Ganjil: ${odd_even.odd}`)
+    console.log(`Jumlah Genap: ${odd_even.evn}`)
