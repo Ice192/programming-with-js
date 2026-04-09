@@ -16,7 +16,7 @@ console.log("4 * 6 =", multiply(4, 6));
 console.log("10 / 2 =", divide(10, 2));
 console.log("---------------------------------------------------------")
 
-const force = require("./physics.js");
+const {kineticEnergy,force} = require("./physics.js");
 console.log("Force = mass * acceleration");
 console.log("Force with mass=10kg and acceleration=9.8m/s^2 =", force(10, 9.8));
 console.log("---------------------------------------------------------");
@@ -301,3 +301,9 @@ for (let time = 1; time <= 10; time++) {
 }
 console.log("---------------------------------------------------------")
 
+// Kinetic Energy
+const mass = readline.question("Masukkan massa objek: ")
+const velocity = readline.question("Masukkan kecepatan objek: ")
+
+console.log(`Hasil Energi Kinetiknya adalah ${kineticEnergy(mass, velocity)}`)
+console.log("---------------------------------------------------------")
