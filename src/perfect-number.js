@@ -27,7 +27,7 @@ function perfectNumber (prima) {
     const result = []
     for(let item of prima) {
         const hasil = 2 ** (item-1) * (2**item - 1)
-        if (hasil < 10000){
+        if (hasil < 10000000){
             result.push(hasil)
         }
     }
