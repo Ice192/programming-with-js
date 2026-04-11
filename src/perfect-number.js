@@ -35,4 +35,36 @@ function perfectNumber (prima) {
     return result
 }
 
-console.log(perfectNumber(bilanganPrima))
+// console.log(perfectNumber(bilanganPrima))
+const perfect_number = []
+const perfect_number_pembagi = []
+function bruteForce (number) {
+    const pembagi = []
+    let totalPembagi = 0
+
+    for (let i = 1; i < number; i++) {
+        if (number % i === 0) {
+            pembagi.push(i)
+        } else {
+            continue
+        }
+    }
+    
+    for (let i = 0; i < pembagi.length; i++){
+        totalPembagi += pembagi[i]
+    }
+
+    if (totalPembagi === number) {
+        perfect_number.push(Number(number))
+        perfect_number_pembagi.push(pembagi)
+        return pembagi
+    }
+}
+
+
+for (let i = 2; i <= 1000; i++){
+    console.log(bruteForce(i))
+}
+
+console.log("Perfect Number sebagai berikut", perfect_number)
+console.log(perfect_number_pembagi)

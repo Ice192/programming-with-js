@@ -19,12 +19,17 @@ function game (generate) {
     while(start) {
         const computerSide = generate()
         const player = readline.question("'Rock' 'Paper' 'Scissor' : ")
-        console.log(`You ${player}  VS  ${computerSide} Computer`)
-
+        // if (player === "Rock" || player === "Paper" || player === "Scissor") {
+        //     continue
+        // } else {
+        //     console.log("Invalid Input. Restart Game")
+        // }
+        console.log(`You | ${player}  VS  ${computerSide} | Computer`)
+        
         if (player === computerSide) {
             continue
         }
-
+        
         if(player === "Rock"){
             if(computerSide === "Scissor") {
                 console.log("Player Win")
@@ -32,31 +37,29 @@ function game (generate) {
             } else {
                 return "Computer Win"
             }
-
-            if (player === "Paper") {
-                if (computerSide === "Rock") {
+        }
+        
+        if (player === "Paper") {
+            if (computerSide === "Rock") {
                 console.log("Player Win")
                 start = false
             } else {
                 return "Computer Win"
-                
-            }
-
-
-            if (player === "Scissor") {
-                if (computerSide === "Paper") {
-                console.log("Player Win")
-                start = false
-            } else {
-                return "Computer Win"
-            }
-
-
             }
         }
-    }
+        
+        if (player === "Scissor") {
+            if (computerSide === "Paper") {
+                console.log("Player Win")
+                start = false
+            } else {
+                console.log("Computer Win")
+                start = false
+            }
+        }
+       
+        
 }
- 
 }
 
 
