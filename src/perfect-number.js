@@ -50,8 +50,12 @@ function bruteForce (number) {
         }
     }
     
-    for (let i = 0; i < pembagi.length; i++){
-        totalPembagi += pembagi[i]
+    // for(const x in pembagi){
+    //     console.log(x)
+    // }
+
+    for(const x of pembagi){
+        totalPembagi += x
     }
 
     if (totalPembagi === number) {
