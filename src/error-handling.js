@@ -8,7 +8,7 @@ function transformToNumber(anyString){
        if(x === ','){
          continue
        }
-        if(isNaN){
+        if(x !== NaN){
            number += x
         }
     }
@@ -26,7 +26,7 @@ function getValueFromArray(arr, index){
 
 console.log(safeDivide(2, 0))
 
-console.log(transformToNumber("30,450.2"))
+console.log(transformToNumber("30450.2"))
 
 console.log(transformToString(30450.2))
 const arr = [1, 2, 3]
@@ -34,3 +34,4 @@ const arr = [1, 2, 3]
 console.log(getValueFromArray(arr, 0))
 
 
+console.log(isNaN)
