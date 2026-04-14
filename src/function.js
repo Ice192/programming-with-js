@@ -93,7 +93,7 @@ function formatHarga (data) {
     return formatRupiah
 }
 
-function applyMiddleware(data, middlewares){
+function applyMiddleware(data, middlewares, ...args){
     let result = data
     for (let mw of middlewares) {
         result = mw(result)
