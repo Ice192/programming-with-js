@@ -3,12 +3,28 @@ function safeDivide(num1, num2) {
 }
 
 function transformToNumber(anyString){
-    const noKoma = anyString.replace(/,/g, '')
-    return Number(noKoma)
+    let number = ""
+    for (let x of anyString){
+       if(x === ','){
+         continue
+       }
+        if(isNaN){
+           number += x
+        }
+    }
+    return Number(number)
 }
 
 function transformToString(anyNumber){
-    return anyNumber.toLocaleString('en-US')
+    const str = String(anyNumber)
+   
+    for (const x of str){
+        if(x === '.'){
+           // Cari bagaimana untuk menambahkan , di tiga terakhir angka 
+        }
+    }
+
+    return str
 }
 
 function getValueFromArray(arr, index){
