@@ -16,15 +16,8 @@ function transformToNumber(anyString){
 }
 
 function transformToString(anyNumber){
-    const str = String(anyNumber)
-   
-    for (const x of str){
-        if(x === '.'){
-           // Cari bagaimana untuk menambahkan , di tiga terakhir angka 
-        }
-    }
-
-    return str
+    const formatString = anyNumber.toLocaleString('id-ID')
+    return formatString
 }
 
 function getValueFromArray(arr, index){
