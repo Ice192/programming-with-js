@@ -11,7 +11,6 @@ function safeDivide(num1, num2) {
 
 function transformToNumber(anyString){
     let number = ""
-    try{
         for (const x of anyString){
         if(x === ',' || x === '.'){
          continue
@@ -23,22 +22,18 @@ function transformToNumber(anyString){
            number += x
         }
     }
-    }
-    catch(err) {
-        console.log(err)
-    }
     return Number(number)
 }
 
 function transformToString(anyNumber){
     const formatString = anyNumber.toString()
-
+    
     return formatString
 }
 
 function getValueFromArray(arr, index){
     if (index >= arr.length) {
-        console.log('index tidak terjangkau')
+        throw new Error('index tidak terjangkau')
     } else {
         return arr[index]
     }
@@ -46,10 +41,20 @@ function getValueFromArray(arr, index){
 
 console.log(safeDivide(2, 0))
 
-console.log(transformToNumber("123,456,.,0"))
+
+try {
+    console.log(transformToNumber("123,456,abc.,0"))
+} catch (error) {
+    console.log(error)
+}
+
 
 console.log(transformToString(30450.2))
 const arr = [1, 2, 3, 4]
 
-console.log(getValueFromArray(arr, 3))
+try{
+    console.log(getValueFromArray(arr, 10))
 
+} catch(error) {
+    console.log(error)
+}
