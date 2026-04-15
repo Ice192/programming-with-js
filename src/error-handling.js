@@ -1,11 +1,11 @@
 function safeDivide(num1, num2) {
-    // try {
-    //     if (num2 === 0){
-    //         throw new Error('Cannot Divide by Zero')
-    //     }
-    // } catch(e){
-    //     console.log(e)
-    // }
+    try {
+        if (num2 === 0){
+            throw new Error('Cannot Divide by Zero')
+        }
+    } catch(e){
+        console.log(e)
+    }
     return num1 / num2
 }
 
@@ -46,7 +46,7 @@ function getValueFromArray(arr, index){
 
 console.log(safeDivide(2, 0))
 
-console.log(transformToNumber("123,456,abc.,0"))
+console.log(transformToNumber("123,456,.,0"))
 
 console.log(transformToString(30450.2))
 const arr = [1, 2, 3, 4]
