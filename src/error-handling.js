@@ -11,32 +11,45 @@ function safeDivide(num1, num2) {
 
 function transformToNumber(anyString){
     let number = ""
-    for (let x of anyString){
-       if(x === ','){
+    try{
+        for (const x of anyString){
+        if(x === ',' || x === '.'){
          continue
        }
-        if(x !== NaN){
+        if(isNaN(x)){
+            throw new Error ("Inputan tidak boleh alphabet")
+        }
+        else {
            number += x
         }
+    }
+    }
+    catch(err) {
+        console.log(err)
     }
     return Number(number)
 }
 
 function transformToString(anyNumber){
-    const formatString = anyNumber.toLocaleString('id-ID')
+    const formatString = anyNumber.toString()
+
     return formatString
 }
 
 function getValueFromArray(arr, index){
-    return arr[index]
+    if (index >= arr.length) {
+        console.log('index tidak terjangkau')
+    } else {
+        return arr[index]
+    }
 }
 
 console.log(safeDivide(2, 0))
 
-console.log(transformToNumber("30,450.2"))
+console.log(transformToNumber("123,456,abc.,0"))
 
 console.log(transformToString(30450.2))
-const arr = [1, 2, 3]
+const arr = [1, 2, 3, 4]
 
-console.log(getValueFromArray(arr, 0))
+console.log(getValueFromArray(arr, 3))
 

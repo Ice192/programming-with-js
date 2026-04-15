@@ -1,36 +1,41 @@
 const fs = require('fs')
 
-
-fs.readFile('./files/starterq.txt','utf8', (err, data) => {
-    if(err) throw err
-    console.log(data)
+fs.readFile('./files/replya.txt', (err, result) => {
+    if (err){
+        console.log(Error)
+    } else {
+        console.log(result.toString())
+    }
 })
 
-console.log('Hello')
- 
-// fs.writeFile ('./files/reply.txt', 'Nice to meet you too', (err) => {
-//     if(err) throw err
-//     console.log("Write Complete")
-// })
+function randomNumber (limit) {
+    const hasil = []
+    for (let i = 0; i < limit; i++){
+        const number = Math.floor(Math.random()*500) + 1
+        hasil.push(number)
+    }
+    return hasil
+}
 
-// fs.appendFile('./files/replya.txt', '\nNice to meet you', (err) => {
-//     if(err) throw err
-//     console.log("Update Complete")
-// }) // append untuk update file dan bisa membuat file baru
+const hasil_random = randomNumber(10).toString()
 
+fs.writeFileSync('./files/newfile.txt', hasil_random)
+const hasil = fs.readFileSync('./files/newfile.txt', 'utf8')
 
-// function randomNumber(number) {
-//     const hasil = []
-//     for (let i = 0; i < number; i++){
-//         const number = Math.floor(Math.random()*500) + 1
-//         hasil.push(number)
-//     }
-//     return hasil
-// }
+function separateComma (hasil) {
+    let number = ''
+    let collect = []
+    for(const x of hasil){
+        if (!isNaN(x)) {
+            number += x
+        }
+         else if (x === ','){
+            collect.push(number)
+        }
+    }
 
-// const hasil = randomNumber(20)
+    return Number(collect)
+}
 
-// fs.writeFile('./files/reply.txt', hasil.join(), (err) => {
-//     if(err) throw err
-//     console.log("Write Complete")
-// })
+const finalHasil = separateComma(hasil)
+console.log(finalHasil)
