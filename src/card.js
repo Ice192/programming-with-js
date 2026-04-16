@@ -5,9 +5,9 @@ const angka = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
 function setCard (simbol, angka) {
     const card = []
-    for (const x of simbol){
-        for (const y of angka){
-            card.push(x+'  '+y)
+    for (const x of angka){
+        for (const y of simbol){
+            card.push(y+'  '+x)
         }
     }
     return card
@@ -28,5 +28,13 @@ function shuffle(arr) {
     return arr
 }
 
-console.log(shuffle(card))
-console.log(shuffle(card))
+function totalShuffle(arr, iteration){
+    for (let i = 0; i < iteration; i++){
+        shuffle(arr)
+    }
+
+    return arr
+}
+
+const random_shuffle = Math.floor(Math.random() * 100) + 1
+console.log(totalShuffle(card, random_shuffle))
