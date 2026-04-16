@@ -1,8 +1,6 @@
 const simbol = ['♠️', '❤️', '♦️', '♣️']
 const angka = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
-
-
 function setCard (simbol, angka) {
     const card = []
     for (const x of angka){
@@ -17,8 +15,8 @@ const card = setCard(simbol,angka)
 console.log(card)
 
 function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        for(let j = 0; j < arr.length; j++){
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = 1; j < arr.length; j++){
         
         const temp = arr[i]
         arr[i] = arr[j]

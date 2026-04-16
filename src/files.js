@@ -26,16 +26,27 @@ function separateComma (hasil) {
     let number = ''
     let collect = []
     for(const x of hasil){
-        if (!isNaN(x)) {
-            number += x
-        }
-         else if (x === ','){
+        if (x === ','){
             collect.push(number)
+            number = ''
+        }
+        if (!isNaN(x)) {
+            number += Number(x)
         }
     }
 
-    return Number(collect)
+    return collect
+}
+
+function sumNumber (arr) {
+    let result = 0
+    for(const x of arr){
+        result += Number(x)
+    }
+    return result
 }
 
 const finalHasil = separateComma(hasil)
+const sum = sumNumber(finalHasil)
 console.log(finalHasil)
+console.log(sum)
