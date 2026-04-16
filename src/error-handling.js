@@ -58,3 +58,15 @@ try{
 } catch(error) {
     console.log(error)
 }
+
+function getValueFromArrayUnsafe(){
+    try {
+        const val = getValueFromArray(arr, 10)
+        return val
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+console.log(getValueFromArrayUnsafe())
+
