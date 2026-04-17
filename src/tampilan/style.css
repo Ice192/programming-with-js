@@ -1,0 +1,40 @@
+body {
+      margin: 0;
+      background: green;
+      text-align: center;
+    }
+    
+    .player {
+      margin: 20px;
+      color: white;
+      border: 2px solid black;
+    }
+
+    .table {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border: 2px solid black;
+    }
+
+    .card {
+      display: flex;
+      width: 60px;
+      height: 90px;
+      background: white;
+      margin: 5px;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }

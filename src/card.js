@@ -109,7 +109,6 @@ function cekPair (card, bandar){
         if(pair_used.includes(result[j])){
             continue
         }
-            
             if (result[i] === result[j]){
                 console.log(`${result[i]} = ${result[j]}`)
                 count_pair += 1
