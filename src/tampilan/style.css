@@ -7,13 +7,13 @@ body {
     .player {
       margin: 20px;
       color: white;
-      border: 2px solid black;
+      
     }
 
     .table {
       margin-top: 50px;
       margin-bottom: 50px;
-      border: 2px solid black;
+      
     }
 
     .card {
