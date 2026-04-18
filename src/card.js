@@ -11,20 +11,19 @@ class Card {
             this.cards.push(y+'  '+x)
         }
     }
-    return this.cards
     }
 
-    get Angka (card){
+    static getAngka (card){
         const angka = card.split("  ")
         return angka[1]
     }
 
-    get Symbol (card) {
+    static getSymbol (card) {
         const symbol = card.split("  ")
         return symbol[0]
     }
 
-    get Color (card) {
+    static getColor (card) {
     let color = "black"
     let symbol = this.getSymbol(card)
     if (symbol === "❤️" || symbol === "♦️"){
@@ -32,32 +31,32 @@ class Card {
     }
 
     return color
-    }
+ }
 }
 
-class Player extends Card{
-    constructor(name, total) {
-        super(cards)
-
-        this.name = name
+class Player {
+    constructor(name, total, cards) {
+        this.user = name
         this.totalCard = total
-        this.myCard = []
+        this.pick_card = []
+        this._cards = cards
     }
 
-    takeCard (){
-        for (let i = 0; i < this.totalCard; i++){
-        const pick = Math.floor(Math.random() * this.cards.length)
+    pickCard (){
+    for (let i = 0; i < this.totalCard; i++){
+        const pick = Math.floor(Math.random() * this._cards.length)
 
-        const take = this.card.splice(pick,1)
-        this.myCard.push(take[0])
+        const take = this._cards.splice(pick,1)
+        this.pick_card.push(take[0])
     }
-    return this.myCard
-    }
+
+    return this.pick_card
+}
+
 }
 
 const card = new Card()
 card.setCard()
-
 
 function theShuffle(arr) {
     for (let i = 0; i < 1000; i++){
@@ -76,87 +75,80 @@ function theShuffle(arr) {
 }
 
 const afterShuffle = theShuffle(card.cards)
+
+const you = new Player ('player', 2, afterShuffle).pickCard()
+const enemy = new Player ('enemy', 2, afterShuffle).pickCard()
+const dealer = new Player ('dealer', 5, afterShuffle).pickCard()
+
+console.log("You", you)
+console.log("Enemy", enemy)
+console.log("Dealer", dealer)
+
 console.log(afterShuffle)
 
-const player1 = new Player('Player', 2)
+function userAngka (user) {
+    const result = []
+    let angka = 0
+for (const item of user){
+    angka = Card.getAngka(item)
+    result.push(angka)
+}
+    return result
+}
 
-player1.takeCard()
-console.log(player1)
-
-// function player (card, total){
-//     const result = []
-//     for (let i = 0; i < total; i++){
-//         const pick = Math.floor(Math.random() * card.length)
-
-//         const take = card.splice(pick,1)
-//         result.push(take[0])
-//     }
-
-//     return result
-// }
-
-// const you = player(final_card, 2)
-// const enemy = player(final_card, 2)
-// const bandar = player(final_card, 5)
-// console.log("you",you)
-// console.log("Enemy",enemy)
-// console.log(bandar)
-
-// console.log(final_card)
-
-// function cekPair (card, bandar){
-//     const result = []
-//     const temp = card.concat(bandar)
-//     let count_pair = 0
+function cekPair (card, bandar){
+    const result = []
+    const temp = card.concat(bandar)
+    let count_pair = 0
    
-//     for (const card of temp){
-//         const aCard = getAngka(card)
-//         result.push(aCard)    
-//     }
-//     const pair_used = []
-//     for (let i = 0; i < result.length - 1; i++){
-//         if(pair_used.includes(result[i])){
-//             continue
-//         }
-//         for (let j = i + 1; j < result.length; j++){
-//         if(pair_used.includes(result[j])){
-//             continue
-//         }
-//             if (result[i] === result[j]){
-//                 console.log(`${result[i]} = ${result[j]}`)
-//                 count_pair += 1
-//                 pair_used.push(result[i])
-//             }
-//         }
-//     }
+    for (const card of temp){
+        const aCard = Card.getAngka(card)
+        result.push(aCard)    
+    }
+    const pair_used = []
+    for (let i = 0; i < result.length - 1; i++){
+        if(pair_used.includes(result[i])){
+            continue
+        }
+        for (let j = i + 1; j < result.length; j++){
+        if(pair_used.includes(result[j])){
+            continue
+        }
+            if (result[i] === result[j]){
+                console.log(`${result[i]} = ${result[j]}`)
+                count_pair += 1
+                pair_used.push(result[i])
+            }
+        }
+    }
 
-//     (count_pair > 2) ? count_pair = 2 : count_pair
+    (count_pair > 2) ? count_pair = 2 : count_pair
 
-//     return count_pair
-// }
+    return count_pair
+}
 
-//  const final_you = cekPair(you, bandar)
-//  if (final_you === 0) {
-//     console.log("You don't have a pair")
-//  } else {
-//     console.log(`You have ${final_you} pair`)
-//  }
-//  const final_enemy = cekPair(enemy, bandar)
-//   if (final_enemy === 0) {
-//     console.log("Enemy don't have a pair")
-//  } else {
-//     console.log(`Enemy have ${final_enemy} pair`)
-//  }
+ const final_you = cekPair(you, dealer)
+ if (final_you === 0) {
+    console.log("You don't have a pair")
+ } else {
+    console.log(`You have ${final_you} pair`)
+ }
+ const final_enemy = cekPair(enemy, dealer)
+  if (final_enemy === 0) {
+    console.log("Enemy don't have a pair")
+ } else {
+    console.log(`Enemy have ${final_enemy} pair`)
+ }
 
 
-// function whoWin (player, enemy){
-//     if (player === enemy){
-//         return "Draw"
-//     } else if (player > enemy) {
-//         return "You Win"
-//     } else {
-//         return "Enemy Win"
-//     }
-// }
+function whoWin (player, enemy){
+    if (player === enemy){
+        return "Draw"
+    } else if (player > enemy) {
+        return "You Win"
+    } else {
+        return "Enemy Win"
+    }
+}
 
-// console.log(whoWin(final_you,final_enemy))
+console.log(whoWin(final_you,final_enemy))
