@@ -5,36 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poker Game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="card.js" defer></script>
 </head>
 <body>
   <div class="card">
     <p>0</p>
   </div>
     <!-- Enemy -->
-  <div class="player center">
+  <div class="player center" id="enemy">
     <div>Enemy</div>
-    <div class="card">??</div>
-    <div class="card">??</div>
   </div>
 
   <!-- Table Cards -->
-  <div class="table center">
-    <div class="card red">A♥</div>
-    <div class="card">K♠</div>
-    <div class="card red">10♦</div>
-    <div class="card red">8♦</div>
-    <div class="card red">2♦</div>
+  <div class="table center" id="dealer">
+    
   </div>
 
   <!-- Player 1 -->
-  <div class="player center">
-      <div class="card">9♠</div>
-      <div class="card red">J♥</div>
+  <div class="player center" id="player">
+      
       <div>Player 1</div>
   </div>
 
   <div>
-    <button>Play</button>
+    <button id="play">Play</button>
   </div>
 </body>
 </html>
