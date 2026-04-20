@@ -93,7 +93,7 @@ for (const item of user){
     angka = Card.getAngka(item)
     result.push(angka)
 }
-    return result
+    return result  
 }
 
 function cekPair (card, bandar){
