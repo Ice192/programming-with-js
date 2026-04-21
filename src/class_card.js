@@ -1,145 +1,130 @@
 class Card {
-    constructor () {
-        this.symbol = ['♠️', '❤️', '♦️', '♣️']
-        this.angka = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    constructor (numbers, symbols) {
+        this.numbers = numbers
+        this.symbols = symbols
+    }
+
+    static combine(symbol, number) {
+        return `${symbol} ${number}`
+    }
+
+}
+
+class FullCard {
+    constructor(){
         this.cards = []
     }
 
-    setCard () {
-    for (const x of this.angka){
-        for (const y of this.symbol){
-            this.cards.push(y+'  '+x)
+    generate(numbers, symbols){
+        for (const number of numbers) {
+            for (const symbol of symbols) {
+                this.cards.push(Card.combine(number,symbol))
+            }
         }
     }
-    }
-
-    static getAngka (card){
-        const angka = card.split("  ")
-        return angka[1]
-    }
-
-    static getSymbol (card) {
-        const symbol = card.split("  ")
-        return symbol[0]
-    }
-
-    static getColor (card) {
-    let color = "black"
-    let symbol = this.getSymbol(card)
-    if (symbol === "❤️" || symbol === "♦️"){
-        color = "red"
-    }
-
-    return color
- }
-}
-
-class Player {
-    constructor(name, total, cards) {
-        this.user = name
-        this.totalCard = total
-        this.pick_card = []
-        this._cards = cards
-    }
-
-    pickCard (){
-    for (let i = 0; i < this.totalCard; i++){
-        const pick = Math.floor(Math.random() * this._cards.length)
-
-        const take = this._cards.splice(pick,1)
-        this.pick_card.push(take[0])
-    }
-
-    return this.pick_card
-}
-
-}
-
-const card = new Card()
-card.setCard()
-
-function theShuffle(arr) {
-    for (let i = 0; i < 1000; i++){
-        const a = Math.floor(Math.random() * arr.length)
-        const b = Math.floor(Math.random() * arr.length)
+    
+    shuffle() {
+        for (let i = 0; i < 1000; i++){
+        const a = Math.floor(Math.random() * this.cards.length)
+        const b = Math.floor(Math.random() * this.cards.length)
 
         if (a === b){
             continue
         }
 
-        const temp = arr[a]
-        arr[a] = arr[b]
-        arr[b] = temp
+        const temp = this.cards[a]
+        this.cards[a] = this.cards[b]
+        this.cards[b] = temp
+        }
     }
-    return arr
+
+    draw(){
+        return this.cards.pop() // atau bisa dengan splice(this.cards.length - 1, 1).
+    }
 }
 
-const afterShuffle = theShuffle(card.cards)
+class Player {
+    constructor(name) {
+        this.name = name
+        this.hand = []
+    }
 
-const you = new Player ('player', 2, afterShuffle).pickCard()
-const enemy = new Player ('enemy', 2, afterShuffle).pickCard()
-const dealer = new Player ('dealer', 5, afterShuffle).pickCard()
+    takeCard (card) {
+        this.hand.push(card)
+    }
+}
 
-console.log("You", you)
-console.log("Enemy", enemy)
-console.log("Dealer", dealer)
+class Dealer {
+    constructor() {
+        this.table = []
+    }
 
-console.log(afterShuffle)
+    takeCard (card) {
+        this.table.push(card)
+    }
+}
 
-function userAngka (user) {
+const deck = new FullCard()
+const player = new Player('You')
+const enemy = new Player('Enemy')
+const dealer = new Dealer()
+
+const symbols = ['♠️', '❤️', '♦️', '♣️']
+const numbers = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+deck.generate(numbers,symbols)
+deck.shuffle()
+
+for (let i = 0; i < 2; i++) {
+      player.takeCard(deck.draw())
+      enemy.takeCard(deck.draw())
+    }
+
+for (let i = 0; i < 5; i++) {
+      dealer.takeCard(deck.draw())
+    }
+
+function getAngka (cards){
     const result = []
-    let angka = 0
-for (const item of user){
-    angka = Card.getAngka(item)
-    result.push(angka)
+    for(const card of cards){
+        card.split(' ')
+        result.push(card[0])
+    }
+    return result
 }
-    return result  
-}
+const playerCardsNumber = getAngka(player.hand)
+const enemyCardsNumber = getAngka(enemy.hand)
+const dealerCardsNumber = getAngka(dealer.table)
 
-function cekPair (card, bandar){
-    const result = []
-    const temp = card.concat(bandar)
-    let count_pair = 0
+function cekPair (player, dealer) {
+   const temp = player.concat(dealer)
+   let count_pair = 0
    
-    for (const card of temp){
-        const aCard = Card.getAngka(card)
-        result.push(aCard)    
-    }
     const pair_used = []
-    for (let i = 0; i < result.length - 1; i++){
-        if(pair_used.includes(result[i])){
+    for (let i = 0; i < temp.length - 1; i++){
+        if(pair_used.includes(temp[i])){
             continue
         }
-        for (let j = i + 1; j < result.length; j++){
-        if(pair_used.includes(result[j])){
+        for (let j = i + 1; j < temp.length; j++){
+        if(pair_used.includes(temp[j])){
             continue
         }
-            if (result[i] === result[j]){
-                console.log(`${result[i]} = ${result[j]}`)
+            if (temp[i] === temp[j]){
+                console.log(`${temp[i]} = ${temp[j]}`)
                 count_pair += 1
-                pair_used.push(result[i])
+                pair_used.push(temp[i])
             }
         }
     }
 
-    (count_pair > 2) ? count_pair = 2 : count_pair
+    if(count_pair > 2)
+        {count_pair = 2} 
 
     return count_pair
 }
 
- const final_you = cekPair(you, dealer)
- if (final_you === 0) {
-    console.log("You don't have a pair")
- } else {
-    console.log(`You have ${final_you} pair`)
- }
- const final_enemy = cekPair(enemy, dealer)
-  if (final_enemy === 0) {
-    console.log("Enemy don't have a pair")
- } else {
-    console.log(`Enemy have ${final_enemy} pair`)
- }
-
+const resultPlayer = cekPair(playerCardsNumber,dealerCardsNumber)
+const resultEnemy = cekPair(enemyCardsNumber,dealerCardsNumber)
 
 function whoWin (player, enemy){
     if (player === enemy){
@@ -151,4 +136,4 @@ function whoWin (player, enemy){
     }
 }
 
-console.log(whoWin(final_you,final_enemy))
+console.log(whoWin(resultPlayer, resultEnemy))
