@@ -10,7 +10,7 @@ class Card {
 
 }
 
-class FullCard {
+class Deck {
     constructor(){
         this.cards = []
     }
@@ -24,17 +24,14 @@ class FullCard {
     }
     
     shuffle() {
-        for (let i = 0; i < 1000; i++){
-        const a = Math.floor(Math.random() * this.cards.length)
-        const b = Math.floor(Math.random() * this.cards.length)
-
-        if (a === b){
-            continue
-        }
-
-        const temp = this.cards[a]
-        this.cards[a] = this.cards[b]
-        this.cards[b] = temp
+        for (const i = 0; i < this.cards.length; i--) {
+                const j = Math.floor(Math.random() * this.cards.length);
+            if (i === j){
+                continue
+            }
+        const temp = this.cards[i]
+        this.cards[i] = this.cards[j]
+        this.cards[j] = temp
         }
     }
 
@@ -64,7 +61,7 @@ class Dealer {
     }
 }
 
-const deck = new FullCard()
+const deck = new Deck()
 const player = new Player('You')
 const enemy = new Player('Enemy')
 const dealer = new Dealer()
