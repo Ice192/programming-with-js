@@ -2,11 +2,25 @@ const symbols = ['♠️', '❤️', '♦️', '♣️']
 const numbers = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 class Card {
     constructor(number, suit){
-        this.suit = suit
-        this.number = number
+        this.suit 
+        this.number 
         this.show = true
         this.isRed()
+        this.isValid(number,suit)
     }
+
+    isValid (number,suit) {
+    try{
+        if(numbers.includes(number) && symbols.includes(suit)){
+            this.suit = suit
+            this.number = number
+        } else {
+            throw new Error("Anda memasukkan angka atau suit yang salah")
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
 
     isOdd() {
         {
@@ -47,7 +61,7 @@ class Deck {
     seed(){
         for(const number of numbers){
             for(const symbol of symbols){
-                const card = createCard(number,symbol)
+                const card = new Card(number,symbol)
                 this.cards.push(card)
                 }
         }
@@ -87,20 +101,10 @@ class Player {
 
 }
 
-function createCard (number, suit) {
-    try{
-        if(numbers.includes(number) && symbols.includes(suit)){
-            const card = new Card (number,suit)
-            return card
-        } else {
-            throw new Error("Anda memasukkan angka atau suit yang salah")
-        }
-    }catch(err){
-        console.log(err)
-    }
-}
 const cards = new Deck()
-console.log(createCard('14','❤️'))
+const card = new Card('14','❤️')
+console.log(card)
+console.log(cards)
 
 // UI function
 function setCardUI (cards) {
