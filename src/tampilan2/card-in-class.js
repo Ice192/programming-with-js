@@ -47,7 +47,7 @@ class Deck {
     seed(){
         for(const number of numbers){
             for(const symbol of symbols){
-                const card = new Card (number,symbol)
+                const card = createCard(number,symbol)
                 this.cards.push(card)
                 }
         }
@@ -63,7 +63,6 @@ class Deck {
         this.cards[i] = this.cards[j]
         this.cards[j] = temp
         }
-        // return this.myDeck
 }
 
     draw(amount) {
@@ -84,8 +83,11 @@ class Deck {
 }
 }
 
+class Player {
+
+}
+
 function createCard (number, suit) {
-    
     try{
         if(numbers.includes(number) && symbols.includes(suit)){
             const card = new Card (number,suit)
@@ -135,7 +137,6 @@ start.addEventListener('click', () => {
 
     const player = document.querySelector('#player')
     const enemy = document.querySelector('#enemy')
-
 
     player.innerHTML = ''
     enemy.innerHTML = ''
