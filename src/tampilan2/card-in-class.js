@@ -58,6 +58,7 @@ class Deck {
         this.cards = []
         this.seed()
         this.level()
+        this.shuffle()
     }
 
     seed(){
@@ -100,14 +101,44 @@ class Deck {
 }
 
 class Player {
+    constructor(cards){
+        this.hand
+        this.takecard(cards)
+    }
+
+    takecard(cards){
+        const take = cards.draw(2)
+        this.hand = take 
+    }
+
+    adraw(cards){
+        const take = cards.draw(1)
+        this.hand.push(take)
+    }
 
 }
 
-const cards = new Deck()
-const card = new Card('14','❤️')
-cards.shuffle()
-console.log(card)
-console.log(cards.cards)
+class Blackjack {
+    constructor(){
+        this.deck 
+        this.player 
+        this.enemy 
+        this.setup()
+    }
+
+    setup(){
+        const cards = new Deck()
+        const player = new Player(cards)
+        const enemy = new Player(cards)
+
+        this.deck = cards
+        this.player = player.hand
+        this.enemy = enemy.hand
+    }
+}
+
+const blackjack = new Blackjack()
+console.log(blackjack.deck.length)
 
 // UI function
 function setCardUI (cards) {
@@ -124,11 +155,18 @@ function setButtonDrawUI (){
 
     myElement.addEventListener('click', () => {
     const player = document.querySelector('#player')
-    const playerCard = cards.draw(1)
+    const playerCard = blackjack.deck.draw(1)
     for(const x of playerCard){
         const result = x.isShow()
         player.append(setCardUI(result))
     }
+
+    const deck = document.querySelector('#deck')
+    deck.innerHTML = ''
+    const element = document.createElement('div')
+    element.classList.add("card")
+    element.innerHTML = blackjack.deck.cards.length
+    deck.append(element)
 })
 
     return myElement
@@ -140,7 +178,6 @@ const start = document.querySelector('#start')
 start.addEventListener('click', () => {
     const deck = document.querySelector('#deck')
     deck.innerHTML = ''
-    cards.shuffle()
 
     const player = document.querySelector('#player')
     const enemy = document.querySelector('#enemy')
@@ -148,8 +185,8 @@ start.addEventListener('click', () => {
     player.innerHTML = ''
     enemy.innerHTML = ''
 
-    const playerCard = cards.draw(2)
-    const enemyCard = cards.draw(2)
+    const playerCard = blackjack.player
+    const enemyCard = blackjack.enemy
     player.append(setButtonDrawUI())
     
     for(const x of playerCard){
@@ -165,7 +202,7 @@ start.addEventListener('click', () => {
     
     const element = document.createElement('div')
     element.classList.add("card")
-    element.innerHTML = cards.cards.length
+    element.innerHTML = blackjack.deck.cards.length
     deck.append(element)
 })
 
