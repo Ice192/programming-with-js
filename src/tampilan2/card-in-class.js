@@ -3,7 +3,8 @@ const numbers = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', '
 class Card {
     constructor(number, suit){
         this.suit 
-        this.number 
+        this.number
+        this.level 
         this.show = true
         this.isRed()
         this.isValid(number,suit)
@@ -56,6 +57,7 @@ class Deck {
     constructor(){
         this.cards = []
         this.seed()
+        this.level()
     }
 
     seed(){
@@ -86,11 +88,11 @@ class Deck {
     level(){
     for(const card of this.cards){
         if (card.number === 'A'){
-            card.number = 11
+            card.level = 11
         } else if(card.number === 'J' || card.number === 'Q' || card.number === 'K'){
-            card.number = 10
+            card.level = 10
         } else {
-           card.number = Number(card.number)
+           card.level = Number(card.number)
         }
     }
     return this.cards
@@ -103,8 +105,9 @@ class Player {
 
 const cards = new Deck()
 const card = new Card('14','❤️')
+cards.shuffle()
 console.log(card)
-console.log(cards)
+console.log(cards.cards)
 
 // UI function
 function setCardUI (cards) {
