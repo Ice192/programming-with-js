@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    background: green;   
+}
+
+button{
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.card {
+    display: flex;
+    width: 70px;
+    height: 90px;
+    background: white;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+}
+
+.deck{
+    margin: 50px;
+}
+
+h2 {
+    color: aliceblue;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    color: red;
+}
